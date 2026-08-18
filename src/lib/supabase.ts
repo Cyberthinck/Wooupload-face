@@ -34,6 +34,34 @@ export interface Profile {
   created_at: string
 }
 
+export interface UserSettings {
+  user_id: string
+  company_name: string
+  company_code: string
+  rest_base_url: string
+  woo_store_url: string
+  created_at: string
+  updated_at: string
+}
+
+export interface ActivityLog {
+  id: string
+  user_id: string
+  title: string
+  detail: string | null
+  kind: 'success' | 'warning' | 'error' | 'info'
+  created_at: string
+}
+
+export interface WorkspaceInvitation {
+  id: string
+  inviter_id: string
+  email: string
+  role: string
+  status: string
+  created_at: string
+}
+
 export const STATUS_LABELS: Record<ProductStatus, string> = {
   activo: 'Activo',
   pendiente: 'Pendiente',
